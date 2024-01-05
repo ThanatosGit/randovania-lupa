@@ -98,7 +98,7 @@ jobs:
     - name: Upload wheels
       uses: actions/upload-artifact@v4
       with:
-        name: wheels-${{ matrix.image }}
+        name: wheels-${{ matrix.image }}-${{ matrix.pyversion }}
         path: wheelhouse_${{ matrix.image}}/*-m*linux*.whl
         if-no-files-found: ignore
 
@@ -152,7 +152,7 @@ jobs:
     - name: Upload wheels
       uses: actions/upload-artifact@v4
       with:
-        name: wheels-${{ matrix.os }}
+        name: wheels-${{ matrix.image }}-${{ matrix.pyversion }}
         path: dist/*.whl
         if-no-files-found: ignore
 
